@@ -1,0 +1,199 @@
+/* ===== Variables y estilos globales ===== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF9C4; /* fallback */
+}
+
+/* Fondos personalizables */
+.bg-yellow {
+    background-color: #FFF9C4 !important; /* amarillo pastel */
+}
+
+.bg-purple {
+    background-color: #E1BEE7 !important; /* morado pastel */
+}
+
+/* Contenedor principal ocupa toda la pantalla */
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Pantallas con posición absoluta para superponer, pero centradas */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ===== Botón de inicio circular ===== */
+.btn-start {
+    background-color: #ffb6c1;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    max-width: 80vw;
+    max-height: 80vw;
+    aspect-ratio: 1/1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.2s, opacity 0.5s, box-shadow 0.2s;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 20px;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    margin: auto; /* asegura centrado */
+}
+
+.btn-start:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.fade-out {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* ===== Botón Siguiente ===== */
+.btn-next {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8e44ad;
+    color: white;
+    font-size: 1.4rem;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-next:active {
+    background-color: #6c3483;
+    transform: scale(0.95);
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .btn-next {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* ===== Mensaje de cumpleaños ===== */
+#birthdayMessage {
+    color: #4a148c;
+    font-weight: 600;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: calc(1.5rem + 1vw); /* responsive */
+    word-break: break-word;
+}
+
+/* ===== Carrusel ===== */
+#carouselScreen {
+    background-color: #E1BEE7;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carousel-title {
+    color: #4a148c;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    font-size: calc(1.2rem + 1vw);
+    margin-bottom: 20px;
+}
+
+.carousel {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    max-height: 60vh;
+    object-fit: contain; /* cambiamos a contain para que se vea entera sin recortes */
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Flechas más grandes y con fondo */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px;
+    height: 45px;
+    background-size: 100%, 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev {
+    left: 5px;
+}
+
+.carousel-control-next {
+    right: 5px;
+}
+
+/* Indicadores más grandes y visibles */
+.carousel-indicators {
+    bottom: -30px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    background-color: #8e44ad;
+}
+
+.carousel-indicators .active {
+    background-color: #4a148c;
+}
+
+/* Ajuste para que el carrusel no quede pegado al borde inferior */
+#carouselScreen .carousel {
+    margin-bottom: 20px;
+}
+
+/* ================================================
+   PERSONALIZACIÓN:
+   - Cambia los colores pastel aquí.
+   ================================================ */

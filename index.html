@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport optimizado para iPhone 16 y otros dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Carta de cumpleaños interactiva</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="body" class="bg-yellow d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <!-- Contenedor principal para centrar todo el contenido -->
+    <div class="container-fluid p-0 position-relative" style="min-height: 100vh;">
+        <!-- Pantalla 1: Botón circular de inicio -->
+        <div id="startScreen" class="screen d-flex justify-content-center align-items-center">
+            <button id="startBtn" class="btn btn-start">Feliz cumpleaños - tocame para iniciar</button>
+        </div>
+
+        <!-- Pantalla 2: Mensajes de cumpleaños -->
+        <div id="messageScreen" class="screen d-none flex-column justify-content-center align-items-center text-center px-3">
+            <h1 id="birthdayMessage" class="display-5 mb-4">¡Feliz cumpleaños, [Nombre]! Sabes que soy de muchas palabras y en tu cumpleaños más, quiero darte las gracias por ser tan espectacular como eres, espero que todos tus deseos se cumplan, tienes un corazón muy linda, eres mi hermanita rubia de Maracaibo, muchas gracias por todo, simplemente…...</h1>
+        </div>
+
+        <!-- Botón Siguiente (esquina inferior derecha) pero lo centramos mejor en móvil? lo dejamos en esquina -->
+        <button id="nextBtn" class="btn btn-next d-none">Siguiente</button>
+
+        <!-- Pantalla 3: Carrusel de fotos -->
+        <div id="carouselScreen" class="screen d-none flex-column justify-content-center align-items-center px-3">
+            <h2 class="carousel-title mb-4 text-center">fotos de momentos que atesoro contigo</h2>
+            <div id="carouselExample" class="carousel slide w-100" data-bs-ride="false" data-bs-interval="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-label="Foto 1"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Foto 2"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Foto 3"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Foto 4"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4" aria-label="Foto 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/foto1.jpg" class="d-block w-100" alt="Foto 1" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+1'">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/foto2.jpg" class="d-block w-100" alt="Foto 2" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+2'">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/foto3.jpg" class="d-block w-100" alt="Foto 3" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+3'">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/foto4.jpg" class="d-block w-100" alt="Foto 4" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+4'">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/foto5.jpg" class="d-block w-100" alt="Foto 5" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+5'">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Audio de fondo -->
+        <audio id="bgMusic" loop preload="auto">
+            <source src="assets/music/fondo.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Librería para confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Nuestro script -->
+    <script src="js/script.js"></script>
+
+    <!-- 
+        ================================================
+        INSTRUCCIONES DE PERSONALIZACIÓN:
+        ================================================
+        1. Cambia el nombre en la variable `friendName` en js/script.js.
+        2. Cambia el texto de agradecimiento en `thanksText`.
+        3. Los colores de fondo se ajustan en css/styles.css (.bg-yellow, .bg-purple).
+        4. Las imágenes del carrusel deben estar en asset/img/ con nombres foto1.jpg ... foto5.jpg.
+           Si faltan, se mostrarán placeholders automáticos.
+        5. La música debe estar en asset/music/fondo.mp3.
+        ================================================
+    -->
+</body>
+</html>
